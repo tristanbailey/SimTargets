@@ -14,5 +14,8 @@
         "alexgarrett/violin": "^2.2",
         "ircmaxell/random-lib": "^1.1",
         "khill/lavacharts" : "2.5.*"
+    },
+    "require-dev": {
+        "behat/behat": "^3.0"
     }
 }
