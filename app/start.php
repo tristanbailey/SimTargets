@@ -1,9 +1,9 @@
 <?php
 //App trial
-//uses twig, elequent 
+//uses twig, elequent
 // runs with session
 // breaks views and routes up
-// has a config and a 
+// has a config and a
 //
 use Slim\Slim;
 use Slim\Views\Twig;
@@ -29,9 +29,8 @@ require INC_ROOT . '/vendor/autoload.php';
 
 // app up
 $app = new Slim([
-    'mode_file' => file_get_contents(INC_ROOT . '/mode.php'),
-
-    'mode' => 'development',
+    'mode' => trim(file_get_contents(INC_ROOT . '/mode.php')),
+//    'mode' => 'development',
     'view' => new Twig(),
     'templates.path' => INC_ROOT . '/app/views'
 ]);
@@ -47,7 +46,6 @@ require INC_ROOT . '/app/database.php';
 //$user = new \Codecourse\User\User;
 
 $app->container->set('user', function() {
-    #return new \Codecourse\User\User;
     return new User;
 });
 
@@ -55,6 +53,9 @@ $app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);
 });
 //var_dump($app->user);
+//echo $app->hash->passwordCheck('dave',$app->hash->password('dave'));
+
+
 // routes up
 //
 require INC_ROOT . '/app/routes.php';
@@ -69,4 +70,3 @@ $view->parserExtensions = [
     new TwigExtension
     ];
 
-echo $app->hash->passwordCheck('dave',$app->hash->password('dave'));
