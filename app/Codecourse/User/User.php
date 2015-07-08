@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class User extends Eloquent
 {
+//    use \Illuminate\Database\Eloquent\SoftDeletes;
+    
     protected $table = 'users';
 
     protected $fillable = [
@@ -17,6 +19,14 @@ class User extends Eloquent
         'remember_identifier',
         'remember_token',
         ];
+
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
 
 }
