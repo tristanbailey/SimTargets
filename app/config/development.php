@@ -13,11 +13,11 @@ return [
         ],
         'db' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
+            'host' => 'localhost',
             'name' => 'slim',
             'username' => 'root',
             'password' => 'root',
-            'charaset' => 'utf8',
+            'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => ''
         ],
