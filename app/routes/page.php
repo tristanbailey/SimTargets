@@ -1,6 +1,8 @@
 <?php
 
 $app->get('/page', function() use ($app) {
-    $app->render('page.twig');
+    //var_dump($app->request->getPath());
+    $cur = $app->router()->getCurrentRoute()->getName();
+    $app->render('page.twig', ['cur' => $cur]);
 })->name('page');
 

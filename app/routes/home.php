@@ -1,7 +1,8 @@
 <?php
 
 $app->get('/', function() use ($app) {
-    $app->render('home.twig');
+    $cur = $app->router()->getCurrentRoute()->getName();
+    $app->render('home.twig', ['cur' => $cur]);
 })->name('home');
 
 

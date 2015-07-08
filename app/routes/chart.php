@@ -42,8 +42,10 @@ $app->get('/chart', function() use ($app) {
     // Example #3, have the library create the div with a fixed size
     $chart3 = $lava->render('LineChart', 'myFancyChart', 'myStocks3', array('height'=>300, 'width'=>600));
 
+    $cur = $app->router()->getCurrentRoute()->getName();
 
     $app->render('chart.twig', [
+        'cur' => $cur,
         'chart' => $chart,
         'chart2' => $chart2,
         'chart3' => $chart3,
