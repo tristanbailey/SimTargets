@@ -13,7 +13,9 @@
         "illuminate/database": "^5.1",
         "alexgarrett/violin": "^2.2",
         "ircmaxell/random-lib": "^1.1",
-        "khill/lavacharts" : "2.5.*"
+        "khill/lavacharts" : "2.5.*",
+        "beberlei/assert": "^2.3",
+        "pda/pheanstalk": "^3.0"
     },
     "require-dev": {
         "behat/behat": "^3.0"

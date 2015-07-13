@@ -5,6 +5,71 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 
+use Assert\Assertion;
+// use Assert\AssertionFailedException;
+
+// \Assert\that($value)->notEmpty()->integer();
+// \Assert\that($value)->nullOr()->string()->startsWith("Foo");
+// \Assert\that($values)->all()->float();
+
+// Assertion::integer($value);
+// Assertion::digit($value);
+// Assertion::integerish($value);
+// Assertion::float($value);
+// Assertion::range($value, $minValue, $maxValue);
+// Assertion::boolean($value);
+// Assertion::scalar($value);
+// Assertion::notEmpty($value);
+// Assertion::noContent($value);
+// Assertion::notNull($value);
+// Assertion::string($value);
+// Assertion::regex($value, $regex);
+// Assertion::length($value, $length);
+// Assertion::minLength($value, $length);
+// Assertion::maxLength($value, $length);
+// Assertion::betweenLength($value, $minLength, $maxLength);
+// Assertion::startsWith($value, $needle);
+// Assertion::endsWith($value, $needle);
+// Assertion::isArray($value);
+// Assertion::contains($value, $needle);
+// Assertion::choice($value, $choices);
+// Assertion::inArray($value, $choices);
+// Assertion::numeric($value);
+// Assertion::keyExists($value, $key);
+// Assertion::notEmptyKey($value, $key);
+// Assertion::notBlank($value);
+// Assertion::isInstanceOf($value, $className);
+// Assertion::notIsInstanceOf($value, $className);
+// Assertion::classExists($value);
+// Assertion::subclassOf($value, $className);
+// Assertion::directory($value);
+// Assertion::file($value);
+// Assertion::readable($value);
+// Assertion::writeable($value);
+// Assertion::email($value);
+// Assertion::url($value);
+// Assertion::alnum($value);
+// Assertion::true($value);
+// Assertion::false($value);
+// Assertion::min($value, $min);
+// Assertion::max($value, $max);
+// Assertion::eq($actual, $expected);
+// Assertion::same($actual, $expected);
+// Assertion::implementsInterface($value, $interfaceName);
+// Assertion::isJsonString($value);
+// Assertion::uuid($value);
+// Assertion::choicesNotEmpty($value, $choices);
+// Assertion::isObject($value);
+// Assertion::methodExists($value, $object);
+
+//try {
+    //Assertion::integer($value, "The pressure of gas is measured in integers.");
+//} catch(AssertionFailedException $e) {
+     error handling
+    //$e->getValue(); // the value that caused the failure
+    //$e->getConstraints(); // the additional constraints of the assertion.
+//}
+
 require 'app/start.php';
 /**
  * Defines application features from the specific context.
