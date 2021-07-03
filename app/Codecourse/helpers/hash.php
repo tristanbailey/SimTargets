@@ -2,7 +2,7 @@
 
 namespace Codecourse\Helpers;
 
-class Hash
+class hash
 {
     protected $config;
 
@@ -10,12 +10,12 @@ class Hash
     {
         $this->config = $config;
     }
-    
+
     public function password($password)
     {
         return password_hash(
-            $password, 
-            $this->config->get('app.hash.algo'), 
+            $password,
+            $this->config->get('app.hash.algo'),
             ['cost' => $this->config->get('app.hash.cost')]
         );
     }

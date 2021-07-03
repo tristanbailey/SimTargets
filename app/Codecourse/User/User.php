@@ -17,6 +17,4 @@ class User extends Eloquent
         'remember_identifier',
         'remember_token',
         ];
-
-
 }

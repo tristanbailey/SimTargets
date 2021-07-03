@@ -1,13 +1,14 @@
 <?php
+
 // charts demo with lavacharts > google charts
 //
 
 use \Khill\Lavacharts\Lavacharts;
 
-$app->get('/chart', function() use ($app) {
+$app->get('/chart', function () use ($app) {
 
     // set up
-    $lava = new Lavacharts;
+    $lava = new Lavacharts();
     $stocksTable = $lava->DataTable();
 
     $stocksTable->addDateColumn('Day of Month')
@@ -15,11 +16,10 @@ $app->get('/chart', function() use ($app) {
                 ->addNumberColumn('Official');
 
     // Random Data For Example
-    for ($a = 1; $a < 30; $a++)
-    {
-        $rowData = array(
-          "2014-8-$a", rand(800,1000), rand(800,1000)
-        );
+    for ($a = 1; $a < 30; $a++) {
+        $rowData = [
+          "2014-8-$a", rand(800, 1000), rand(800, 1000),
+        ];
 
         $stocksTable->addRow($rowData);
     }
@@ -37,18 +37,15 @@ $app->get('/chart', function() use ($app) {
     // not seem to add the js includes >> >>
     //
     // Example #2, have the library create the div
-    $chart2 =  $lava->render('LineChart', 'myFancyChart', 'myStocks2', true);
+    $chart2 = $lava->render('LineChart', 'myFancyChart', 'myStocks2', true);
 
     // Example #3, have the library create the div with a fixed size
-    $chart3 = $lava->render('LineChart', 'myFancyChart', 'myStocks3', array('height'=>300, 'width'=>600));
-
+    $chart3 = $lava->render('LineChart', 'myFancyChart', 'myStocks3', ['height' => 300, 'width' => 600]);
 
     $app->render('chart.twig', [
-        'chart' => $chart,
+        'chart'  => $chart,
         'chart2' => $chart2,
         'chart3' => $chart3,
         ]);
 
 })->name('chart');
-
-
